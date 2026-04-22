@@ -1,0 +1,181 @@
+/* =============================================
+   1. ESTILOS BASE Y RESET
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* =============================================
+   2. NAVEGACIÓN (NAVBAR)
+   ============================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    color: white;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.navbar a:hover {
+    color: #f4a261;
+}
+
+/* =============================================
+   3. SECCIONES HERO (PORTADAS)
+   ============================================= */
+.hero, .hero-small {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero { height: 100vh; background-image: url('https://images.unsplash.com/photo-1587595431973-160d0d94add1'); }
+.hero-small { height: 60vh; background-image: url('https://images.unsplash.com/photo-1587595431973-160d0d94add1'); }
+
+.hero::before, .hero-small::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content, .hero-small-content { position: relative; z-index: 1; }
+
+.hero-content h1 { font-size: 4.5rem; margin-bottom: 15px; text-shadow: 0 5px 15px rgba(0,0,0,0.8); }
+.btn {
+    background: #e76f51; color: white; padding: 15px 40px;
+    border-radius: 50px; text-decoration: none; display: inline-block; transition: 0.3s;
+}
+.btn:hover { background: #f4a261; transform: scale(1.05); }
+
+/* =============================================
+   4. DESTINOS Y BIENVENIDA
+   ============================================= */
+.destinos, .bienvenida, .destacados {
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.bienvenida { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto 0;
+}
+
+.card {
+    background: white; border-radius: 12px; overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s;
+}
+.card:hover { transform: translateY(-10px); }
+.card img { width: 100%; height: 200px; object-fit: cover; }
+
+/* =============================================
+   5. GALERÍA (LA QUE SIMPLIFICAMOS)
+   ============================================= */
+.galeria {
+    padding: 120px 5% 60px;
+    background: #f8f9fa;
+    text-align: center;
+}
+
+/* =============================================
+   6. CONTACTO (REPARADO)
+   ============================================= */
+.pagina-contacto {
+    max-width: 1200px;
+    margin: 120px auto 50px;
+    padding: 0 5%;
+}
+
+.contacto-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contacto-formulario {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.campo { margin-bottom: 20px; }
+.campo label { display: block; margin-bottom: 8px; font-weight: bold; }
+.campo input, .campo select, .campo textarea {
+    width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px;
+}
+
+.btn-enviar {
+    background: #e76f51; color: white; padding: 14px 30px;
+    border: none; border-radius: 50px; cursor: pointer; width: 100%;
+}
+
+.contacto-info {
+    background: #2d6a4f; color: white; padding: 30px; border-radius: 20px;
+    display: flex; flex-direction: column; justify-content: center;
+}
+
+/* =============================================
+   7. MULTIMEDIA (VIDEO Y AUDIO)
+   ============================================= */
+.video-section, .audio-section { padding: 60px 5%; text-align: center; }
+.video-container { max-width: 800px; margin: auto; }
+
+/* =============================================
+   8. FOOTER Y RESPONSIVE
+   ============================================= */
+.footer {
+    background: #2d2d2d; color: white; text-align: center;
+    padding: 30px; margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .contacto-contenedor { grid-template-columns: 1fr; }
+    .hero-content h1 { font-size: 2.5rem; }
+    .navbar ul { gap: 15px; }
+}
